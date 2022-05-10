@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linkedin</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="body">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbarbg fixed-top border">
+      <a class="navbar-brand" href="#"
+        ><i
+          class="fab fa-linkedin fa-lg"
+          style="color: #0a66c2; font-size: 2.4rem"
+        ></i
+      ></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></button>
+      <form class="form-inline">
+        <input
+          class="form-control searche"
+          type="search"
+          placeholder="Arama Yap"
+          aria-label="Search"
+        />
+      </form>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav  ">
+          <li class="nav-item active mr-auto">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-home fa-lg" style="color: black">
+                <div class="menutext" style="color: black">Ana Sayfa</div></i
+              >
+            </a>
+          </li>
+          <li class="nav-item active mr-4">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-user-friends fa-lg">
+                <div class="menutext">Ağım</div></i
+              >
+            </a>
+          </li>
+          <li class="nav-item active mr-2">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-briefcase fa-lg">
+                <div class="menutext">İş İlanları</div></i
+              >
+            </a>
+          </li>
+          <li class="nav-item active mr-1">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-comment-dots fa-lg">
+                <div class="menutext">Mesajlaşma</div></i
+              >
+            </a>
+          </li>
+          <li class="nav-item active mr-1">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-bell fa-lg">
+                <div class="menutext">Bildirimler</div></i
+              >
+            </a>
+          </li>
+          <li class="nav-item active mr-1">
+            <a class="nav-link"href="#">
+              <img
+                src="data:image/jpeg;base64,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"
+                style="width: 25px;height: 25px;"/>
+              <div class="menutext fas">Ben</div>
+            </a>
+          </li>
+          <li class="nav-item active border-left">
+            <a class="nav-link ml-4 mr-2" href="#"
+              ><i class="fas fa-th fa-lg"> <div class="menutext">İş</div></i>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-chalkboard fa-lg">
+                <div class="menutext">İş İlanı Yayınla</div></i
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div>
+      <div class="container">
+      <div class="row">
+        <!-- sol panel -->
+        <div class="col-sm-2 mr-5">
+          <!-- sol panel -->
+          <div class="card" style="width: 14rem">
+            <div
+              class="card-header"
+              style="
+                background: rgb(88, 41, 209);
+                height: 61px;
+              "
+            >
+              <img
+                src="data:image/png;base64,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"
+                class="d-block mx-auto" style="
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                  "
+              />
+            </div>
+            <div class="card-body">
+              <p class="card-title header">
+                <a href="https://www.linkedin.com/in/cengizcmataraci/" target="_blank" style="color: #212529;">Cengiz Cemal Mataracı</a>
+              </p>
+              <div
+                style="
+                  margin-bottom: 10px;
+                  color: #5f5f5f;
+                "
+              >
+                Software Developer at Navlungo - Dijital Lojistik Platformu
+              </div>
+              <hr />
+              <div class="card-text">
+                <div>
+                  <span class="view">Profilinizi kimler görüntüledi </span
+                  ><span class="float-right view mt-1" style="color: #0a66c2"
+                    >447</span
+                  >
+                </div>
+                <div>
+                  <span class="view">Yayınınız için görüntüleme </span
+                  ><span class="float-right view mt-1" style="color: #0a66c2"
+                    >150</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card-footer ">
+              <i class="fas fa-bookmark"></i
+              ><span class="mb-4"
+                >Ögelerim</span
+              >
+            </div>
+          </div>
+          <div class="card mt-2" style="width: 14rem">
+            <div
+              class="card-header"
+              style="margin-bottom: -22px; font-size: 18px"
+            >
+              Sayfalarım
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C4E0BAQGl9HYLHdcl6g/company-logo_100_100/0/1610108537301?e=1619654400&v=beta&t=MxTTjGSiH6Xvx2x9YMbjgLWIaU5uojZNqXGGuUIWUQo"
+                  style="width: 32px; height: 32px"
+                />
+                <div
+                  style="
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-top: -35px;
+                    margin-left: 37px;
+                  "
+                >
+                  Kablosuz Beyin
+                </div>
+                <div
+                  class=""
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: gray;
+                    margin-left: 38px;
+                  "
+                >
+                  Sayfa Bildirimleri
+                  <span class="" style="color: #0a66c2">10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mt-2 "
+            style="width: 14rem;"
+            
+          >
+            <div
+              class="card-header bg-white border-0"
+              style="font-size: 12px"
+            >
+              En Yeni
+            </div>
+            <div class="card-body position-sticky">
+              <div class="card-title">
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold;  margin-top: 4rem ;"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >kodluyoruz</span
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >front-end</span
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >html</span
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >css</span
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >bootstrap</span
+                  >
+                </div>
+                <div class="mt-3 categories">Gruplar</div>
+                <span class="mt-2 categories">Etkinlikler</span>
+                <span
+                  class="float-right mb-5"
+                  style="font-size: 23px; color: #5f5f5f"
+                  >+</span
+                >
+                <div class="mt-3 mb-1 categories">Takip edilen hashtagler</div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >kodluyoruz</span
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fas fa-hashtag"
+                    style="font-size: 13px; font-weight: bold"
+                  ></i
+                  ><span
+                    class="ml-2 font-weight-bold"
+                    style="font-size: 13px; color: #5f5f5f"
+                    >front-end</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="card-footer"
+            >
+              Daha fazla keşfet
+            </div>
+          </div>
+        </div>
+
+        <!-- orta panel -->
+        <div
+          class="col-sm-6"
+          style=""
+        >
+          <div class="card">
+            <div class="card-body">
+              <input
+                type="text"
+                class="form-control content"
+                placeholder="Bir gönderi başlat"
+              />
+              <span
+                ><button class="mediatext">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill=" #70B5F9" width="24" height="24" focusable="false">
+  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+</svg><span class="ml-1 mediatext color">Fotoğraf</span>
+                </button></span
+              >
+              <span
+                ><button class="mediatext">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#7FC15E" width="24" height="24" focusable="false">
+  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z"></path>
+</svg><span class="ml-1 mediatext">Video</span>
+                </button></span
+              >
+              <span
+                ><button class="mediatext">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#E7A33E" width="24" height="24" focusable="false">
+  <path d="M3 3v15a3 3 0 003 3h12a3 3 0 003-3V3zm13 1.75A1.25 1.25 0 1114.75 6 1.25 1.25 0 0116 4.75zm-8 0A1.25 1.25 0 116.75 6 1.25 1.25 0 018 4.75zM19 18a1 1 0 01-1 1H6a1 1 0 01-1-1V9h14zm-5.9-3a1 1 0 00-1-1H12a3.12 3.12 0 00-1 .2l-1-.2v-3h3.9v1H11v1.15a3.7 3.7 0 011.05-.15 1.89 1.89 0 012 1.78V15a1.92 1.92 0 01-1.84 2H12a1.88 1.88 0 01-2-1.75 1 1 0 010-.25h1a.89.89 0 001 1h.1a.94.94 0 001-.88z"></path>
+</svg><span class="ml-1 mediatext">Etkinlik</span>
+                </button></span
+              >
+              <span
+                ><button class="mediatext">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#F5987E" width="24" height="24" focusable="false">
+  <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
+</svg><span class="ml-1 mediatext">Yazı yaz</span>
+                </button></span
+              >
+              
+        
+            </div>
+          </div>
+          <div>
+            <hr />
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span>
+              <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEq7HNPXtEvvw/profile-displayphoto-shrink_200_200/0/1596227507685?e=1617235200&v=beta&t=Br4sHpegbSSX-GR1RnrEqRrZxTr55k3R80qTImOV0i0" class="postphoto">
+              <span class="posttext"><a href="https://www.linkedin.com/in/malan/" target="_blank" style="color: #212529;">David J. Malan</a></span>
+              <span class="float-right">
+                <i class="fas fa-ellipsis-h fa-md"></i>
+              </span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">I teach CS50</span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">25a  <i class="fas fa-globe-americas fa-sm"></i></span>
+            </div>
+            <div>
+              <p class="card-text ml-3" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 15px; color: black;">
+                They have done great things! Tebrikler Kodluyoruz!
+              </p>
+              <div>
+              <img
+                src="https://pbs.twimg.com/media/Em2_xBbXUAEVDx1.jpg"
+                class="card-img-top mb-1"
+                alt="..."
+              />
+              </div>
+              <span class="ml-2"><img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt=""></span>
+              <span class="ml-2"><img src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f" alt=""></span>
+              <span class="ml-2" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;"><img src="https://static-exp1.licdn.com/sc/h/7fx9nkd7mx8avdpqm5hqcbi97" alt="">  958</span>
+              <div class="card-footer bg-white mt-1">
+                <span
+                ><button class="ref">
+                  <i class="far fa-thumbs-up fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Beğen</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="far fa-comment fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Yorum Yap</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-share fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Paylaş</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-paper-plane fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Gönder</span></i
+                  >
+                </button></span
+              >
+              </div>
+            </div>
+          </div>
+          <div class="card mt-2">
+            <div class="card-header">
+              <span>
+              <img src="https://media-exp1.licdn.com/dms/image/C4D03AQElb-DNAAEmdw/profile-displayphoto-shrink_100_100/0/1612346194572?e=1617840000&v=beta&t=h3L8-3LHbhYLbAv1rsO744OwtBSZmYXvsEqdEEPrQyU" class="postphoto">
+              <span class="posttext"><a href="https://www.linkedin.com/in/ozanhalis/" target="_blank" style="color: #212529;">Ozan Halis İLTER</a></span>
+              <span class="float-right">
+                <i class="fas fa-ellipsis-h fa-md"></i>
+              </span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">Team Leader at YetGen | CodeCraft | Kablosuz Beyin | IEEE MEF...</span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">1s  <i class="fas fa-globe-americas fa-sm"></i></span>
+            </div>
+            <div>
+              <p class="card-text ml-3" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 15px; color: black;">
+                Erhan Erkut hocamız ile birlikte YetGen'de harika şeyler yapmak için geliyoruz!
+              </p>
+              <div>
+              <img
+                src="https://miro.medium.com/max/1080/1*gdDWFSvHDt57DS2zsh_0Bg.png"
+                class="card-img-top mb-1"
+                alt="..."
+              />
+              </div>
+              <span class=""><img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt=""></span>
+              <span class=""><img src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f" alt=""></span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;"><img src="https://static-exp1.licdn.com/sc/h/7fx9nkd7mx8avdpqm5hqcbi97" alt="">  210</span>
+              <div class="card-footer bg-white mt-1">
+                <span
+                ><button class="ref">
+                  <i class="far fa-thumbs-up fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Beğen</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="far fa-comment fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Yorum Yap</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-share fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Paylaş</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-paper-plane fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Gönder</span></i
+                  >
+                </button></span
+              >
+              </div>
+            </div>
+          </div>
+            <div class="card mt-2">
+            <div class="card-header bg-white border-0">
+              <span>
+              <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH4JkiPZoa8rA/profile-displayphoto-shrink_200_200/0/1599749901304?e=1617840000&v=beta&t=f7PcMP3AD9cAr7oMWdgIxVW4XESNdh2R_7alX7oVltY" class="postphoto">
+              <span class="posttext"><a href="https://www.linkedin.com/in/ramazansancar/" target="_blank" style="color: black;">Ramazan Sancar</a></span>
+              <span class="float-right">
+                <i class="fas fa-ellipsis-h fa-md"></i>
+              </span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">Co-Founder at Kablosuz Beyin | Intern & Community Lead at Kod...</span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;">25a  <i class="fas fa-globe-americas fa-sm"></i></span>
+            </div>
+            <div>
+              <p class="card-text ml-3" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 15px; color: #212529;">
+                Cat Özel Harekat'a katılmak isteyenleri şöyle alalım..
+              </p>
+              <div>
+              <img
+                src="https://media-exp1.licdn.com/dms/image/C4D22AQEm8KJthEJcwA/feedshare-shrink_800/0/1608202571866?e=1615420800&v=beta&t=YvPxACnfgaojpTgKIaeOd_apcdEzTVS82cM-kJYKv4U"
+                class="card-img-top mb-1"
+                alt="..."
+              />
+              </div>
+              <span class=""><img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt=""></span>
+              <span class=""><img src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f" alt=""></span>
+              <span class="" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 13px; color: #474747;"><img src="https://static-exp1.licdn.com/sc/h/7fx9nkd7mx8avdpqm5hqcbi97" alt="">  224</span>
+              <div class="card-footer bg-white mt-1">
+                <span
+                ><button class="ref">
+                  <i class="far fa-thumbs-up fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Beğen</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="far fa-comment fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Yorum Yap</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-share fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Paylaş</span></i
+                  >
+                </button></span
+              >
+                              <span
+                ><button class="ref">
+                  <i class="fas fa-paper-plane fa-md" style="font-size: 1.2rem"
+                    ><span class="ml-2 mediatext">Gönder</span></i
+                  >
+                </button></span
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sağ panel -->
+        <div class="col-sm-3 ">
+          <div class="card" style="width: 19rem">
+            <div class="card-header bg-white border-0">
+              <span>Akışınıza ekleyin</span
+              ><span><i class="fas fa-info-circle float-right"></i></span>
+            </div>
+            <div class="card-title">
+              <div class="ml-3">
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C4E0BAQFJFhz89Jkl1w/company-logo_200_200/0/1609603335789?e=1619654400&v=beta&t=m6mVHf05Zfd34UW8SBsvRz939Z_lxYUY3GilK-_MrCw"
+                  style="width: 50px; height: 50px; border-radius: 50%"
+                />
+                <div class="header ml-1" style="font-size: 14px"
+                  >Codecraft</div
+                >
+                <span class="float-right mr-3 mt-2"
+                  ><button
+                    class=""
+                    style="border-radius: 50px"
+                  >
+                    <strong>+ Takip Et</strong>
+                  </button></span
+                >
+              </div>
+            </div>
+            <div class="card-title">
+              <div class="ml-3">
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C4D0BAQF7ydVqrVTvqg/company-logo_200_200/0/1587802313117?e=1619654400&v=beta&t=2kFooBBTUCTVngrEWmktX1z6nI8EgX8nRdQNH8-vxww"
+                  style="width: 50px; height: 50px; border-radius: 50%"
+                />
+                <div class="header ml-1" style="font-size: 14px"
+                  >Podfresh</div
+                >
+                <span class="float-right mr-3 mt-2"
+                  ><button
+                    class=""
+                    style="border-radius: 50px"
+                  >
+                    <strong>+ Takip Et</strong>
+                  </button></span
+                >
+              </div>
+            </div>
+            <div class="card-title">
+              <div class="ml-3">
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C4D0BAQH1zDgdaC7alQ/company-logo_200_200/0/1578773895199?e=1619654400&v=beta&t=ke3I_LL-q5odDNzcfpiAsWTIjnqUk2BCVNQCI88BQqk"
+                  style="width: 50px; height: 50px; border-radius: 50%"
+                />
+                <div class="header ml-1" style="font-size: 14px"
+                  >Navlungo</div
+                >
+                <span class="float-right mr-3 mt-2"
+                  ><button
+                    class=""
+                    style="border-radius: 50px"
+                  >
+                    <strong>+ Takip Et</strong>
+                  </button></span
+                >
+              </div>
+            </div>
+            <div
+              class="card-footer bg-white border-0"
+              style="font-size: 14px; color: #0a66c2"
+            >
+              <strong></strong>
+            </div>
+          </div>
+          <div class="card mt-2" style="">
+            <div class="card-header bg-white border-0">
+              <span>Bugünün en çok izlenen eğitimleri</span
+              ><span><i class="fas fa-info-circle float-right"></i></span>
+            </div>
+            <div class="card-title">
+              <ol>
+                <li>
+                  The Six Morning Habits of High Perf...
+                  <div
+                    style="
+                      font-weight: lighter;
+                      font-size: 13px;
+                      color: #5f5f5f;
+                    "
+                  >
+                    Pete Mocakatais | How to be awesome at you...
+                  </div>
+                </li>
+                <li class="mt-2">
+                  Onconscious Blas
+                  <div
+                    style="
+                      font-weight: lighter;
+                      font-size: 13px;
+                      color: #5f5f5f;
+                    "
+                  >
+                    Stacey Gordon
+                  </div>
+                </li>
+                <li class="mt-2">
+                  Critical Thinking for Better Judgme...
+                  <div
+                    style="
+                      font-weight: lighter;
+                      font-size: 13px;
+                      color: #5f5f5f;
+                    "
+                  >
+                    Becki Saltzman
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div
+              class="card-footer"
+              style="color: #0a66c2; font-size: 15px; margin-top: -25px"
+            >
+              Linkedin Learning'de daha fazlasını göster
+            </div>
+          </div>
+          <div class="text-center mt-3 ml-3" style="">
+            <div
+              ><a href="https://about.linkedin.com/" class="link mr-3"
+                >Hakkında</a
+              ></div
+            >
+            <div
+              ><a
+                href="https://www.linkedin.com/accessibility?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BT6H7rzDzR%2FSQEvO%2BuBKdSw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_feed-compactfooter.accessibility"
+                class="link mr-3"
+                >Erişilebilirlik</a
+              ></div
+            >
+            <div
+              ><a
+                href="https://www.linkedin.com/help/linkedin?trk=footer_d_flagship3_feed&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BT6H7rzDzR%2FSQEvO%2BuBKdSw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_feed-compactfooter.help"
+                class="link"
+                >Yardım Merkezi</a
+              ></div
+            >
+            <div><a href="" class="link mr-3">Gizlilik ve Koşullar</a></div>
+            <div
+              ><a
+                href="https://www.linkedin.com/help/linkedin/answer/62931?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BT6H7rzDzR%2FSQEvO%2BuBKdSw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_feed-compactfooter.ad_choices"
+                class="link"
+                >Reklam Tercihleri</a
+              ></div
+            >
+            <div
+              ><a
+                href="https://www.linkedin.com/ad/start?trk=n_nav_ads_rr&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BT6H7rzDzR%2FSQEvO%2BuBKdSw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_feed-compactfooter.advertising"
+                class="link"
+                >Reklam</a
+              ></div
+            >
+            <div class="text-center" style="margin-top: 10px">
+              <img
+                src="https://www.logo.wine/a/logo/LinkedIn/LinkedIn-Logo.wine.svg"
+                width="90px"
+                height="20px"
+              /><span style="font-size: 12px; margin-left: -15px"
+                >Linkedin Corporation © 2021</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- mesajlaşma -->
+    <nav
+      class="navbar navbar-expand-xl navbar-light bg-dark position-sticky fixed-bottom border"
+      style="height: 50px; position: -webkit-sticky; border-radius: 5px; margin-left: auto; right: 15px;"
+    >
+      <a class="navbar-brand" href="#"
+        ><img
+          src="https://media-exp1.licdn.com/dms/image/C4D03AQFpMjVJ_N2wRQ/profile-displayphoto-shrink_100_100/0/1582787654653?e=1616630400&v=beta&t=C1X2NxhcN0R0GmELl1Ew7BeOoyGbwJXCw8c7lHm6XuA"
+          style="width: 30px; height: 30px; border-radius: 50%;"
+      /></a>
+      <span style="font-size: 14px; font-weight: bold; font-family:Arial, Helvetica, sans-serif;"><strong>Mesajlaşma</strong></span>
+      <span class="offset-3"><img src="/assets/edit-regular.svg" width="15px" height="15px" ></span>
+      <span><i class="fas fa-ellipsis-h fa-sm ml-3"></i></span>
+      <span><i class="fas fa-chevron-up fa-sm ml-3"></i></span>
+    </nav>
+  </body>
+</html>
